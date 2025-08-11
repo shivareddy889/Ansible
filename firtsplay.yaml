@@ -1,0 +1,24 @@
+---
+ - name: first play
+   hosts: all
+   become: yes
+   tasks:
+      - name : install apache2
+        ansible.builtin.apt:
+               name: apache2
+               state: present
+               update_cache: yes
+      - name : create the index.html
+        ansible.builtin.copy:
+             dest: /var/www/html/index.html
+             content: |
+                  <!DOCTYPE html>
+                  <html>
+                  <head><title>Server</title></head>
+                  <body><h1>Served from {{ ansible_hostname }}</h1></body>
+                  </html>
+             mode: '0644'
+      - name : restart the apache
+        ansible.builtin.service:
+              name: apache2
+              state: restarted
