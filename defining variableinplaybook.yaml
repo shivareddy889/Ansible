@@ -1,0 +1,11 @@
+---
+  - name: variables in playbook
+    hosts: all
+    gather_facts: no
+    vars:
+       app_name: "myapp"
+       app_port: 8080
+    tasks:
+      - name: debuging the task
+        ansible.builtin.debug:
+            msg: "these is the app {{app_name}} and port number is {{app_port}}" 
