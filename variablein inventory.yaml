@@ -1,0 +1,8 @@
+---
+ - name: variables in inven
+   gather_facts: no
+   hosts: db
+   tasks:
+      - name: variables
+        ansible.builtin.debug:
+            msg: these is the port number {{app_port}}
