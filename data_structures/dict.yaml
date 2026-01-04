@@ -1,0 +1,12 @@
+---
+- name: checking dict
+  hosts: all
+  gather_facts: false
+  vars:
+    mydict:
+      apple:mango
+      pen:ball
+  tasks:
+     - name: dict
+       ansible.builtin.debug:
+        msg: "{{mydict}}"

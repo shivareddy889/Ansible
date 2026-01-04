@@ -1,0 +1,13 @@
+---
+- name: copy the files
+  hosts: all
+  become: true
+  tasks:
+    - name: copy the files
+      ansible.builtin.copy:
+         src: /home/ansible/Ansible/first.yaml
+         dest: /tmp/first.yaml
+         owner: root
+         group: root
+         mode: '0644'
+

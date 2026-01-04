@@ -1,0 +1,14 @@
+---
+- name: lists of things
+  hosts: all
+  gather_facts: false
+  vars:
+    myList:
+     - first value
+     - second value
+     - third value
+  become: true
+  tasks:
+     - name: name of the list
+       ansible.builtin.debug:
+         msg: "{{ myList }}"
