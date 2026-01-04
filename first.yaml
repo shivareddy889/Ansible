@@ -1,0 +1,11 @@
+---
+- name: Display welcome message
+  hosts: all
+  gather_facts: false
+  tasks:
+      - name: first task
+        ansible.builtin.debug:
+             msg: 'welcome to ansible automation'
+      - name: second task
+        ansible.builtin.debug:
+              msg: 'this is first playbook'
