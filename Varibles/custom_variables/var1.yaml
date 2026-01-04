@@ -1,0 +1,15 @@
+---
+- name: new custom vars
+  hosts: all
+  gather_facts: no
+  vars:
+    x: 6
+    y: 10
+    name: world
+  tasks:
+      - name: display the variables
+        ansible.builtin.debug:
+          msg: 
+            - "x value is {{x}}"
+            - "y value is {{y}}"
+            - "my name is {{name}}"

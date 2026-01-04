@@ -1,0 +1,15 @@
+---
+- name: custom variables
+  hosts: all
+  vars:
+     x: 2
+     y: 3
+  gather_facts: false
+  tasks:
+    - name: adding x value
+      ansible.builtin.debug:
+          msg: "x value is {{x}}"
+    - name: adding y value
+      ansible.builtin.debug:
+           msg: "y value is {{y}}"
+

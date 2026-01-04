@@ -1,0 +1,35 @@
+---
+- name: data types
+  hosts: all
+  gather_facts: false
+  vars:
+    x: 1
+    y: 2.2
+    z: ansible
+    a: "hello world"
+    b: true
+    c: false
+  tasks:
+    - name: this is int
+      ansible.builtin.debug:
+        msg: "int value is {{ x }}"
+
+    - name: this is float
+      ansible.builtin.debug:
+        msg: "float value is {{ y }}"
+
+    - name: this is string (unquoted)
+      ansible.builtin.debug:
+        msg: "string value is {{ z }}"
+
+    - name: this is string (quoted)
+      ansible.builtin.debug:
+        msg: "string value is '{{ a }}'"
+
+    - name: this is boolean true
+      ansible.builtin.debug:
+        msg: "boolean value is {{ b }}"
+
+    - name: this is boolean false
+      ansible.builtin.debug:
+        msg: "boolean value is {{ c }}"
