@@ -1,0 +1,16 @@
+---
+- name: install http package
+  hosts: all
+  become: yes
+  gather_facts: true
+  tasks:
+      - name: install httpd
+        ansible.builtin.yum:
+              name: httpd
+              state: present
+        when: ansible_os_family == "Linux"
+      - name: install apache2
+        ansible.builtin.apt:
+              name: apache2
+              state: present
+        when: ansible_os_family == "Debian"

@@ -1,0 +1,10 @@
+---
+- name: testing on local
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: testing on local
+      ansible.builtin.debug:
+         msg: "hello local"
+
