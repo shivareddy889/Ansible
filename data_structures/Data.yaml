@@ -1,0 +1,14 @@
+---
+- name: Data structures
+  hosts: all
+  gather_facts: no
+  vars:
+    scalar: 6
+    myList: [1,2,3]
+    myDictionary: {"book":"pen", "ball":"bat"}
+  tasks:
+    - name: testing data structures
+      ansible.builtin.debug:
+         msg: "value of {{scalar}},list:{{myList}},dic:{{myDictionary}}"
+
+        

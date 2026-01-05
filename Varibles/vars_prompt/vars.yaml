@@ -1,0 +1,16 @@
+---
+- name: example of var promt
+  hosts: all
+  vars_prompt:
+     - name: x
+       prompt: "enter the x value"
+     - name: y
+       prompt: "enter the y value"
+  tasks:
+     - name: Display the value of x
+       debug:
+         msg: "the value of x is {{x}}"
+     - name: Display the value of y
+       debug:
+          msg: "the value of y is {{y}}"
+

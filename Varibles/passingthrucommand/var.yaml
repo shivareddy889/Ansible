@@ -1,0 +1,17 @@
+---
+- name: passing thru command
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Dispay the value of x
+      debug:
+        msg: "the value of x is {{x}}"
+    - name : dispaly the value of y
+      debug:
+         msg: "the value of y is {{y}}"
+
+# ansible-playbook var.yaml -i /home/ansible/inventory --extra-vars "x=9 y=10"
+
+#ansible-playbook display_vars.yml -e "{ 'x': 'hello', 'y': {'key1': 'value1', 'key2': 'value2'} }"
+#ansible-playbook display_vars.yml -e "x=hi y=bye"
+#ansible-playbook display_vars.yml -e "{ 'x': 5, 'y': [1, 2, 3] }"

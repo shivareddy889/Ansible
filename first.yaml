@@ -1,6 +1,6 @@
 ---
 - name: Display welcome message
-  hosts: all
+  hosts: dev
   gather_facts: false
   tasks:
       - name: first task

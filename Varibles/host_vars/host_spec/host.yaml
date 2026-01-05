@@ -1,0 +1,7 @@
+---
+- name: Demonstrate host_vars
+  hosts: dev
+  tasks:
+    - name: Print variables x and y
+      debug:
+         msg: "x={{ x }}, y={{ y }}"

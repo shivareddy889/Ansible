@@ -1,0 +1,19 @@
+---
+ - name: Demonstrate debug module with msg and var
+   hosts: all
+   vars:
+     x: 8
+     y: 7
+   tasks:
+     - name: Display a message with msg
+       debug:
+          msg: "This is a test message using msg."
+     - name: Display the value of 'x' using var
+       debug:
+         var: x
+     - name: Display multiple variables 'x' and 'y' using msg
+       debug:
+         msg: "x value: {{ x }}, y value: {{ y }}"
+     - name: Display 'x' and 'y' using var (in a single task)
+       debug:
+         var: x,y

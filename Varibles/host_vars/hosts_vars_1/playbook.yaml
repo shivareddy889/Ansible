@@ -1,0 +1,24 @@
+---
+- name: Demonstrate host_vars
+  hosts: dev
+  tasks:
+    - name: Print variables x and y
+      debug:
+        msg: "x={{ x }}, y={{ y }}"
+
+
+
+
+
+
+
+ansible@ip-172-31-5-24:~/Ansible/Varibles/host_vars$ tree hosts_vars_1/
+hosts_vars_1/
+├── host_vars
+│   ├── 172.31.10.191.yaml
+│   └── 172.31.6.93.yaml
+├── inventory
+└── playbook.yaml
+
+2 directories, 4 files
+

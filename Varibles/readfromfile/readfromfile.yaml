@@ -1,0 +1,15 @@
+---
+- name: read from file
+  hosts: all
+  vars_files:
+    - varswithfile.yaml
+  tasks:
+    - name: value of thing
+      ansible.builtin.debug:
+          msg: "value of {{myval}}"
+    - name: value of list
+      ansible.builtin.debug:
+          msg: "value of {{myList}}"
+    - name: value of dict
+      ansible.builtin.debug:
+        msg: "value of {{myDictionary}}"
